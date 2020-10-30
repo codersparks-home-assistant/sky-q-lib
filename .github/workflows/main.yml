@@ -31,12 +31,11 @@ jobs:
       - name: set author details for chores
         run: git config --global user.name "Codersparks Home Assistant Auto Releaser" && git config --global user.email none@example.com
 
-      - run: cat ~/.npmrc
+      - name: Install modules
+        run: npm install
 
       - name: Perform release
         run: npm run release
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         
       - name: Publish to npm registry
         run: npm publish --access public
