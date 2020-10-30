@@ -14,7 +14,7 @@
     "test": "echo 'WARANING: Not yet implemented'",
     "build": "npm run lint && npm run transpile",
     "release-patch": "npm run clean && npm run build && npm version patch && npm publish",
-    "commit": "git add -A && git-cz",
+    "commit": "git pull && git add -A && git-cz",
     "prettier:check": "prettier --check 'src/**/*.{js,ts}'",
     "validate": "run-s test lint prettier:check",
     "prerelease": "git checkout main && git pull origin main && npm i && run-s validate && git add .",
