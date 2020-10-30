@@ -30,7 +30,9 @@ jobs:
 
       - name: set author details for chores
         run: git config --global user.name "Codersparks Home Assistant Auto Releaser" && git config --global user.email none@example.com
-          
+
+      - run: ls -la
+
       - name: Perform release
         run: npm run release
         env:
